@@ -1,0 +1,49 @@
+#include <iostream>
+//import cmath library for pow(x,y)
+#include <cmath>
+//import input/output manipulator for setprecision
+#include <iomanip>
+
+using namespace std;
+
+int main() {
+
+	int weight, height = 0;
+	float BMI = 0;
+
+
+	cout << "Please enter your weight(lbs): \n";
+	cin >> weight;
+
+	if (weight > 1400) {
+		cout << "The heaviest human being ever recorded was Jon Brower Minnoach, weighing at 1400 pounds.\n";
+		cout << "If you are heavier than Jon, please call Guinness World Record. \n";
+		return 1;
+	}
+	cout << "Please enter your height(inches): " << endl;
+	cin >> height;
+
+	if (height > 107) {
+		cout << "The tallest human being ever recorded was Robert Pershing Wadlow, weighing at 8ft 11in .\n";
+		cout << "If you are taller than Robert, please call Guinness World Record. \n";
+		return 1;
+	}
+
+	//BMI calculation: (weight*703)/height^2;
+
+	BMI = (weight * 703) / pow(height, 2);
+
+	if (BMI < 18.5) {
+		cout << "You're underweight.Your BMI is " << setprecision(3) << BMI;
+	}
+	else if (BMI >= 18.5 && BMI <= 23) {
+		cout << "You're very healthy.Your BMI is " << setprecision(3) << BMI;
+	}
+	else if (BMI >= 23 && BMI <= 27.5) {
+		cout << "You're overweight.Your BMI is " << setprecision(3) << BMI;
+	}
+	else if (BMI > 27.5) {
+		cout << "You're obese.Your BMI is " << setprecision(3) << BMI;
+	}
+	return 0;
+}
